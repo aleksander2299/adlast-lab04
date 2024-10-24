@@ -1,5 +1,7 @@
 package no.ntnu.idata2302.lab04;
 
+import com.sun.source.tree.ReturnTree;
+
 public class BST {
 
     public static BST fromValues(int... values) {
@@ -175,10 +177,14 @@ public class BST {
         }
     }
 
-    public String format() {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented!");
+    public String format(StringBuilder stringBuilder) {
+            if (left != null) left.format(stringBuilder);
+        stringBuilder.append(value).append(", ");
+            if (right != null) right.format(stringBuilder);
+
+            return stringBuilder.toString();
     }
+
 
 }
 
