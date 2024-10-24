@@ -67,19 +67,26 @@ public class BST {
     }
 
     int minimum() {
-        // TODO: Implement this operation
-        while(this.hasLeft()){
-            if(hasLeft() == false){
-                return left.value;
-            }
-        }
-        return 0;
+        BST currentNode = this;
 
+        while (currentNode.hasLeft()) {
+            currentNode = currentNode.left;
+        }
+
+
+        return currentNode.value;
     }
 
+
     int maximum() {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented!");
+        BST currentNode = this;
+
+        while (currentNode.hasRight()) {
+            currentNode = currentNode.right;
+        }
+
+
+        return currentNode.value;
 
     }
 
