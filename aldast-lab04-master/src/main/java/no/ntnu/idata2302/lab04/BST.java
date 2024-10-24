@@ -23,8 +23,31 @@ public class BST {
     }
 
     public BST insert(int givenValue) {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented");
+        BST currentNode = this;
+        BST parent = null;
+
+        while (currentNode != null) {
+            if (currentNode.value < givenValue) {
+
+                parent = currentNode;
+                currentNode = currentNode.right;
+
+            } else {
+                parent = currentNode;
+                currentNode = currentNode.left;
+            }
+        }
+        if(parent.value > givenValue){
+            parent.left = new BST(givenValue);
+        }
+        else if (parent.value < givenValue){
+            parent.right = new BST(givenValue);
+        }
+
+
+
+
+        return this;
     }
 
     /**
@@ -45,7 +68,12 @@ public class BST {
 
     int minimum() {
         // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented!");
+        while(this.hasLeft()){
+            if(hasLeft() == false){
+                return left.value;
+            }
+        }
+        return 0;
 
     }
 
