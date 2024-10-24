@@ -20,18 +20,27 @@ public class Heap {
     }
 
     public void insert(Integer k) {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented");
+        int i = 0;
+        while(array.get(i) < k && i < array.size() - 1) {
+            i++;
+        }
+        array.add(i, k);
     }
 
     public int takeMinimum() {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented");
+        Integer minimum = array.get(0);
+        array.remove(0);
+        return minimum;
     }
 
     public void decreaseKey(int i, int k) {
-        // TODO: Implement this operation
-        throw new RuntimeException("Not yet implemented");
+        if (!array.contains(k)) {
+            throw new RuntimeException("Element doesn't appear in tree");
+        } else if (array.indexOf(k) >= i) {
+            throw new RuntimeException("New key cannot be equal or grater than previous key");
+        }
+        array.remove(k);
+        array.add(i,k);
     }
 
     private int parentOf(int index) {
