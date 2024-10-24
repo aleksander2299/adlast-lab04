@@ -14,6 +14,7 @@ public class BST {
         return tree;
     }
 
+    private int size = 1;
     private int value;
     private BST left;
     private BST right;
@@ -44,8 +45,7 @@ public class BST {
             parent.right = new BST(givenValue);
         }
 
-
-
+        this.size++;
 
         return this;
     }
@@ -54,8 +54,7 @@ public class BST {
      * @return the number of items in this tree
      */
     public int size() {
-        // TODO: implement this operation
-        throw new RuntimeException("Not yet implemented!");
+        return this.size;
     }
 
     private boolean hasLeft() {
