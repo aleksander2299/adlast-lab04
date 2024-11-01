@@ -39,8 +39,8 @@ public class Heap {
         } else if (array.indexOf(k) >= i) {
             throw new RuntimeException("New key cannot be equal or grater than previous key");
         }
-        array.remove(k);
-        array.add(i,k);
+        array.remove(i);
+        this.insert(k);
     }
 
     private int parentOf(int index) {
