@@ -22,6 +22,8 @@ public class BSTTest {
     @Test
     public void containItemThatWereInserted() {
         assertTrue(tree.contains(7));
+        StringBuilder stringBuilder = new StringBuilder();
+        System.out.println(tree.format(stringBuilder));
     }
 
     @Test
